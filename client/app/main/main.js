@@ -3,9 +3,14 @@
 angular.module('kelsikaymakeupApp')
   .config(function ($stateProvider) {
     $stateProvider
-      .state('main', {
+      .state('home', {
         url: '/',
-        templateUrl: 'app/main/main.html',
+        templateUrl: 'app/partials/home.html',
+        controller: 'MainCtrl'
+      })
+      .state('about', {
+        url: '/',
+        templateUrl: 'app/partials/about.html',
         controller: 'MainCtrl'
       });
   });

@@ -1,0 +1,20 @@
+
+<div class="jumbotron text-center">
+  <div ng-controller="MainCtrl">
+    <div style="height: 305px">
+      <carousel interval="myInterval">
+        <slide ng-repeat="slide in slides" active="slide.active">
+          <img ng-src="{{slide.image}}" style="margin:auto;">
+          <div class="carousel-caption">
+            <p>{{slide.text}}</p>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <!-- <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button> -->
+      </div>
+    </div>
+  </div>
+</div>
