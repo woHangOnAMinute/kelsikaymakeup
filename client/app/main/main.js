@@ -5,7 +5,7 @@ angular.module('kelsikaymakeupApp')
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'app/partials/home.html',
+        templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
       })
       .state('about', {

@@ -1,20 +1,25 @@
-<!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a ui-sref="home">Home</a></li>
-            <li><a ui-sref="about">About</a></li>
-        </ul>
-    </nav>
+
 <header class="hero-unit" id="banner">
-      <img src="assets/images/kkmua.jpg" alt="KelsiKayMakeup">
+      <img src="assets/images/kkmu.png" alt="KelsiKayMakeup">
 </header>
+<nav class="navbar navbar-inverse" role="navigation">
+      <ul class="nav navbar-nav">
+          <li><a ui-sref="home">Home</a></li>
+          <li><a ui-sref="about">About</a></li>
+          <li><a ui-sref="services">Services</a></li>
+          <li><a ui-sref="gallery">Gallery</a></li>
+          <li><a ui-sref="testimonials">Testimonials</a></li>
+          <li><a ui-sref="contact">Contact</a></li>
+      </ul>
+</nav>
 
 <!--  INJECTED VIEWS -->
 <div id="main">
-
+<ng-include src="'app/partials/about.html'"></ng-include>
+<ng-include src="'app/partials/services.html'"></ng-include>
+<ng-include src="'app/partials/home.html'"></ng-include>
+<ng-include src="'app/partials/testimonials.html'"></ng-include>
+<ng-include src="'app/partials/contact.html'"></ng-include>
 
 </div>
 
