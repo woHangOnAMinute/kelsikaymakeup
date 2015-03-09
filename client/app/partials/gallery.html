@@ -1,25 +1,8 @@
-
-<div class="jumbotron jumbo-alt text-center"> 
-
-<div class="text-center">
-  <div ng-controller="MainCtrl">
-    <div style="height: 305px">
-      <carousel interval="myInterval">
-        <slide ng-repeat="slide in slides" active="slide.active">
-          <img ng-src="{{slide.image}}" class="carousel-image" style="margin:auto;">
-          <div class="carousel-caption">
-            <p style="font-family: Skinny;">{{slide.text}}</p>
-          </div>
-        </slide>
-      </carousel>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <!-- <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button> -->
-      </div>
-    </div>
-  </div>
-</div>
-
-     <p>{{ message }}</p>
- </div>
+<carousel interval="myInterval">
+  <slide ng-repeat="slide in slides" active="slide.active">
+    <img ng-src="{{slide.image}}" class="carousel-image" style="margin:auto;">
+    <!-- <div class="carousel-caption">
+      <p style="font-family: Skinny;">{{slide.text}}</p>
+    </div> -->
+  </slide>
+</carousel>

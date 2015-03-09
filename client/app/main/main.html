@@ -1,64 +1,77 @@
 <!--
-image main
-nav bar stick unstick (cleanly)
-set bg colour for alternating sections
-add contacts section
-Services
 
-From kelsi
-Services
-folder of gallery
-about
-
-
-
+Tody contact
+tidy footer??? use facebook F?
+add proper imagery
 -->
-<header class="hero-unit" id="banner">
-      <img src="assets/images/kkmu.jpg" alt="KelsiKayMakeup">
+<header class="hero-unit" id="home">
+      <img src="assets/images/K_K_MU.svg" alt="KelsiKayMakeup">
 </header>
 <nav id="main-nav" class="navbar navbar-inverse" role="navigation">
       <ul class="nav navbar-nav">
-          <li><a ui-sref="home">Home</a></li>
-          <li><a ui-sref="about">About</a></li>
-          <li><a ui-sref="services">Services</a></li>
-          <li><a ui-sref="gallery">Gallery</a></li>
-          <li><a ui-sref="testimonials">Testimonials</a></li>
-          <li><a ui-sref="contact">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://www.facebook.com/pages/Kelsi-Kay-Makeup-Artistry/639833736122560?fref=ts" target="_blank">
+          <img src="assets/images/FB-f-Logo__white_50.png" alt="KelsiKayMakeup-Facebook"></a></li>
+          <!-- <li><a href="">
+          <img src="assets/images/instagram.png" alt="KelsiKayMakeup-Facebook"></a></li> -->
       </ul>
 </nav>
 
 <!--  INJECTED VIEWS -->
 <div id="main">
-<ng-include src="'app/partials/about.html'"></ng-include>
-<ng-include src="'app/partials/services.html'"></ng-include>
-<ng-include src="'app/partials/gallery.html'"></ng-include>
-<ng-include src="'app/partials/testimonials.html'"></ng-include>
-<ng-include src="'app/partials/contact.html'"></ng-include>
+
+<img class="hero_image" id="heroImage" src="assets/images/home_image.jpg" alt="KelsiKayMakeup">
+<ng-include id="about" src="'app/partials/about.html'"></ng-include>
+<ng-include id="services" src="'app/partials/services.html'"></ng-include>
+<ng-include id="gallery" src="'app/partials/gallery.html'"></ng-include>
+<ng-include id="testimonials" src="'app/partials/testimonials.html'"></ng-include>
+<ng-include id="contact" src="'app/partials/contact.html'"></ng-include>
 
 </div>
 
 <footer class="footer">
   <div class="container">
       <p>Kelsi Kay Makeup</p>
+      <a href="https://www.facebook.com/pages/Kelsi-Kay-Makeup-Artistry/639833736122560?fref=ts">Facebook</a>
   </div>
 </footer>
 
 <script>
 
   window.addEventListener("scroll", scroll);
-
+  var bSnapped = false;
   function scroll(e)
   {
-    console.log(window.pageYOffset);
-
-    if(window.pageYOffset > 700)  {
+    var rect = document.getElementById('heroImage').getBoundingClientRect();
+    if(window.pageYOffset > rect.top+120 && !bSnapped)  {
       var d = document.getElementById("main-nav");
       d.className = d.className + " navbar-fixed-top sticky";
+      bSnapped = true;
     }
-    else
+    else if (window.pageYOffset <= rect.top+120)
     {
       document.getElementById("main-nav").className = "navbar navbar-inverse";
+      bSnapped = false;
     }
   }
 
+  $(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  });
   </script>
