@@ -46,6 +46,16 @@
     margin 0.2em 0
     padding 0.2em 0
 
+.jumbotron
+    background-color #FDF5F5
+    margin 0
+    padding 0
+    min-height 500px
+    vertical-align middle
+
+.jumbo-alt
+    background-color #FAEFEF
+
 .navbar
       float none
       text-align center
@@ -62,15 +72,14 @@
             li
                 a
                     color #FFF
-                :hover
-                    color #333
+                    &:hover
+                        color #CDACAB
+                &:hover
+                    color #CDACAB
 
 .navbar
     .navbar-collapse
         text-align center
-
-.jumbotron
-    min-height 800px
 // injector
 @import 'main/main.styl';
 @import 'modal/modal.styl';

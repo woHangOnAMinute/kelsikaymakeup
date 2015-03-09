@@ -1,8 +1,22 @@
+<!--
+image main
+nav bar stick unstick (cleanly)
+set bg colour for alternating sections
+add contacts section
+Services
 
+From kelsi
+Services
+folder of gallery
+about
+
+
+
+-->
 <header class="hero-unit" id="banner">
-      <img src="assets/images/kkmu.png" alt="KelsiKayMakeup">
+      <img src="assets/images/kkmu.jpg" alt="KelsiKayMakeup">
 </header>
-<nav class="navbar navbar-inverse" role="navigation">
+<nav id="main-nav" class="navbar navbar-inverse" role="navigation">
       <ul class="nav navbar-nav">
           <li><a ui-sref="home">Home</a></li>
           <li><a ui-sref="about">About</a></li>
@@ -17,7 +31,7 @@
 <div id="main">
 <ng-include src="'app/partials/about.html'"></ng-include>
 <ng-include src="'app/partials/services.html'"></ng-include>
-<ng-include src="'app/partials/home.html'"></ng-include>
+<ng-include src="'app/partials/gallery.html'"></ng-include>
 <ng-include src="'app/partials/testimonials.html'"></ng-include>
 <ng-include src="'app/partials/contact.html'"></ng-include>
 
@@ -28,3 +42,23 @@
       <p>Kelsi Kay Makeup</p>
   </div>
 </footer>
+
+<script>
+
+  window.addEventListener("scroll", scroll);
+
+  function scroll(e)
+  {
+    console.log(window.pageYOffset);
+
+    if(window.pageYOffset > 700)  {
+      var d = document.getElementById("main-nav");
+      d.className = d.className + " navbar-fixed-top sticky";
+    }
+    else
+    {
+      document.getElementById("main-nav").className = "navbar navbar-inverse";
+    }
+  }
+
+  </script>
