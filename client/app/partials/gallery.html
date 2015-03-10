@@ -1,8 +1,8 @@
+<div class="center-text">
+  <h1>GALLERY</h1>
+</div>
 <carousel interval="myInterval">
   <slide ng-repeat="slide in slides" active="slide.active">
     <img ng-src="{{slide.image}}" class="carousel-image" style="margin:auto;">
-    <!-- <div class="carousel-caption">
-      <p style="font-family: Skinny;">{{slide.text}}</p>
-    </div> -->
   </slide>
 </carousel>

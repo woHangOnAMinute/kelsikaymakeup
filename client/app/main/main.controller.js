@@ -4,17 +4,20 @@ angular.module('kelsikaymakeupApp')
   .controller('MainCtrl', function ($scope, $http) {
     $scope.message = 'OH MY GOODNESS';
 
+    $scope.testimonials = [];
+    $scope.testimonials.push({'quote':'"suscipit enim eleifend, imperdiet posuere ante."', 'name':'- Josh Kay'});
+    $scope.testimonials.push({'quote':'"Lorem ipsum dolor sit amet, consectetur "', 'name':'- Leah White'});
+    $scope.testimonials.push({'quote':'"suscipit enim eleifend, imperdiet posuere ante."', 'name':'- Jonah Lomu'});
+
     $scope.myInterval = 5000;
     var slides = $scope.slides = [];
-    $scope.addSlide = function() {
+    $scope.addSlide = function(value) {
       var newWidth = 600 + slides.length + 1;
       slides.push({
-        image: 'http://placekitten.com/' + newWidth + '/300',
-        text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
-          ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
+        image: 'assets/images/'+ value +'.jpg',
       });
     };
-    for (var i=0; i<4; i++) {
-      $scope.addSlide();
+    for (var i=0; i<8; i++) {
+      $scope.addSlide(i+1);
     }
   });
