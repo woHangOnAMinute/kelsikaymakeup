@@ -9,10 +9,9 @@ angular.module('kelsikaymakeupApp')
     $scope.testimonials.push({'quote':'"Lorem ipsum dolor sit amet, consectetur "', 'name':'- Leah White'});
     $scope.testimonials.push({'quote':'"suscipit enim eleifend, imperdiet posuere ante."', 'name':'- Jonah Lomu'});
 
-    $scope.myInterval = 5000;
+    $scope.myInterval = 3000;
     var slides = $scope.slides = [];
     $scope.addSlide = function(value) {
-      var newWidth = 600 + slides.length + 1;
       slides.push({
         image: 'assets/images/'+ value +'.jpg',
       });

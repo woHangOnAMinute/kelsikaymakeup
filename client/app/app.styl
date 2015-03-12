@@ -53,6 +53,8 @@ body
     font-family Hip
     color #CDCDCD
 
+a
+    color #FDC1AC
 .browsehappy
     background #ccc
     color #000
@@ -105,9 +107,20 @@ p
     color #989898
     font-family Hip
 
+@media (max-width: 768px)
+    .navbar
+        height 100%
+        position relative
+
 .navbar
     .navbar-collapse
         text-align center
+
+.center-container
+    width 100%
+    max-width 800px
+    text-align center
+    margin auto
 // injector
 @import 'main/main.styl';
 @import 'modal/modal.styl';
